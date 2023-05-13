@@ -192,7 +192,7 @@ contract Legit is Ownable {
 
         address[] memory usedAddresses = skillRequests[id].usedAddresses;
         for (uint i = 0; i < usedAddresses.length; i++) {
-            require(msg.sender != usedAddresses[i], "Can't validate yourself");
+            require(msg.sender != usedAddresses[i], "Already validated");
         }
 
         skillRequests[id].submissions += 1;
