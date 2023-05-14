@@ -1,0 +1,78 @@
+type AddCompany @entity(immutable: true) {
+  id: Bytes!
+  name: String! # string
+  companyAddress: Bytes! # address
+  companyType: Int! # uint8
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type CreateRequest @entity(immutable: true) {
+  id: Bytes!
+  Legit_id: BigInt! # uint64
+  isCompany: Boolean! # bool
+  companyName: String! # string
+  userAccount: Bytes! # address
+  title_companyType: Int! # uint8
+  title_name: String! # string
+  isExecuted: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type CreateSkillRequest @entity(immutable: true) {
+  id: Bytes!
+  Legit_id: BigInt! # uint64
+  userAccount: Bytes! # address
+  skillName: String! # string
+  companyName: [String!]! # string[]
+  submissions: BigInt! # uint256
+  isExecuted: Boolean! # bool
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type OwnershipTransferred @entity(immutable: true) {
+  id: Bytes!
+  previousOwner: Bytes! # address
+  newOwner: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type SkillValidationComplete @entity(immutable: true) {
+  id: Bytes!
+  Legit_id: BigInt! # uint64
+  userAccount: Bytes! # address
+  skill: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ValidateRequest @entity(immutable: true) {
+  id: Bytes!
+  Legit_id: BigInt! # uint64
+  userAccount: Bytes! # address
+  companyName: String! # string
+  title_companyType: Int! # uint8
+  title_name: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
+
+type ValidateSkillRequest @entity(immutable: true) {
+  id: Bytes!
+  Legit_id: BigInt! # uint64
+  userAccount: Bytes! # address
+  skill: String! # string
+  validator: Bytes! # address
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
