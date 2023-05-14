@@ -10,3 +10,11 @@ coverage
 
 # Typechain generated files
 generated-types
+
+frontend/node_modules
+frontend/.next
+frontend/out
+frontend/.vercel
+frontend/.vscode
+frontend/.DS_Store
+frontend/coverage
